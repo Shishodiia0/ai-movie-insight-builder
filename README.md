@@ -1,36 +1,83 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎬 AI Movie Insight Builder
 
-## Getting Started
+A full-stack web application that analyzes movie details and generates AI-powered audience sentiment insights using IMDb IDs.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Live Demo
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Deployed on Vercel:  
+👉 [(https://ai-movie-insight-builder.vercel.app/)](https://ai-movie-insight-builder.vercel.app/)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠 Tech Stack
 
-## Learn More
+### Frontend
+- Next.js (App Router)
+- TypeScript
+- Tailwind CSS
 
-To learn more about Next.js, take a look at the following resources:
+### Backend
+- Next.js API Routes
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### APIs
+- OMDb API (Movie metadata)
+- OpenAI API (AI sentiment analysis)
+- Rule-based fallback sentiment classifier
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🧠 Architecture Rationale
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Used Next.js full-stack to avoid over-engineering.
+- API routes isolate backend logic cleanly.
+- Tailwind ensures responsive modern UI.
+- Fallback sentiment logic ensures resilience if AI API quota fails.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## ⚙️ Setup Instructions
+
+1. Clone the repository:
+   git clone https://github.com/Shishodiia0/ai-movie-insight-builder.git
+
+2. Install dependencies:
+   npm install
+
+3. Create `.env.local` file:
+   OMDB_API_KEY=your_key
+   OPENAI_API_KEY=your_key
+
+4. Run locally:
+   npm run dev
+
+---
+
+## 📌 Features
+
+- IMDb ID input validation
+- Movie metadata fetching
+- Poster, cast, rating, year, plot display
+- AI-powered sentiment summary
+- Sentiment classification (Positive / Mixed / Negative)
+- Fallback sentiment logic
+- Responsive glassmorphism UI
+- Error handling
+
+---
+
+## 🧪 Testing
+
+Basic error handling tested for:
+- Invalid IMDb ID
+- Empty input
+- API failure fallback
+
+---
+
+## 📎 Assumptions
+
+- OMDb API used for movie metadata.
+- Audience review text simulated for sentiment analysis.
+- AI fallback ensures application stability if API quota is exceeded.
